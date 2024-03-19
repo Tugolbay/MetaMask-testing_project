@@ -65,6 +65,7 @@ const WalletPage = () => {
           ],
         });
         console.log(txHash);
+        setRecipientAddress("");
       } catch (error) {
         console.error(error);
       }
