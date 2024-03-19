@@ -91,7 +91,7 @@ const WalletPage = () => {
           </Section>
         </Article>
 
-        <Section2>
+        <SecondSection>
           <TextField
             label="Адрес получателя"
             value={recipientAddress}
@@ -100,7 +100,7 @@ const WalletPage = () => {
           <Button variant="contained" onClick={handleSendTransaction}>
             Отправить транзакцию
           </Button>
-        </Section2>
+        </SecondSection>
       </Main>
     </Container>
   );
@@ -112,7 +112,11 @@ const Container = styled("div")`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 3rem;
+  margin-top: 3rem;
+
+  @media (max-width: 360px) {
+    display: block;
+  }
 `;
 
 const Main = styled("main")`
@@ -125,18 +129,39 @@ const Main = styled("main")`
   border-radius: 1.5rem;
   padding: 2rem;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+
+  @media (max-width: 360px) {
+    width: 30rem;
+  }
 `;
 
 const Section = styled("section")`
   display: flex;
   gap: 1rem;
   align-items: center;
+
+  @media (max-width: 360px) {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  @media (max-width: 1100px) {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
 `;
 
 const Article = styled("article")`
   display: flex;
   gap: 10rem;
   align-items: center;
+
+  @media (max-width: 550px) {
+    gap: 3rem;
+  }
 `;
 
 const Balance = styled(Typography)`
@@ -146,9 +171,13 @@ const Balance = styled(Typography)`
 
 const WalletAdress = styled(Typography)`
   color: #1f4a7f;
+
+  @media (max-width: 550px) {
+    font-size: 1.5rem;
+  }
 `;
 
-const Section2 = styled("div")`
+const SecondSection = styled("section")`
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -156,4 +185,12 @@ const Section2 = styled("div")`
 
 const Value = styled(Typography)`
   color: #3f6319;
+
+  @media (max-width: 740px) {
+    font-size: 1rem;
+  }
+
+  @media (max-width: 550px) {
+    font-size: 0.7rem;
+  }
 `;
